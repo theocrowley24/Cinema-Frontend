@@ -1,0 +1,407 @@
+@import "styles/Comment.scss";
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+$primary: #892cdc;
+$secondary: #e94560;
+$darkGrey: #212121;
+$lightGrey: #323232;
+
+body {
+  margin: 0;
+  background-color: $darkGrey;
+  font-family: "Lato", sans-serif;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 300px auto auto;
+  grid-template-rows: 64px auto;
+  grid-template-areas:
+            "sidebar header header"
+            "sidebar content content";
+}
+
+.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+
+  background: $lightGrey;
+  color: white;
+
+  position: fixed;
+  width: 300px;
+
+  height: 100vh;
+}
+
+.content {
+  grid-area: content;
+
+  min-height: 90vh;
+
+  overflow: hidden;
+
+  /*padding: 25px;*/
+}
+
+.center {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.v-center {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.right-align {
+  display: flex;
+  margin-left: auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.font-color-grey {
+  color: #9DA5B1;
+}
+
+hr {
+  border: 1px solid grey;
+
+  width: 80%;
+}
+
+.MuiPaper-root {
+  background-color: $lightGrey !important;
+  color: white !important;
+
+  //box-shadow: -1px 2px 12px 0 rgba(176,176,176,0.78) !important;
+  //-webkit-box-shadow: -1px 2px 12px 0 rgba(176,176,176,0.78);
+  //-moz-box-shadow: -1px 2px 12px 0 rgba(176,176,176,0.78);
+}
+
+.MuiAppBar-root {
+  box-shadow: none !important;
+}
+
+.MuiTextField-root {
+  color: white !important;
+}
+
+.MuiDivider-root {
+  background-color: $lightGrey !important;
+}
+
+.MuiTablePagination-caption {
+  color: white !important;
+}
+
+.MuiTablePagination-selectIcon {
+  color: white !important;
+}
+
+//.MuiButton-contained:not(.Mui-disabled) {
+//    background: rgb(82,5,123);
+//    background: linear-gradient(90deg, rgba(82,5,123,1) 1%, rgba(152,118,182,1) 32%, rgba(131,91,158,1) 80%);
+//}
+
+.MuiInputBase-root {
+  color: white !important;
+}
+
+.MuiOutlinedInput-notchedOutline {
+  border-color: $lightGrey !important;
+}
+
+.MuiInput-underline::before {
+  border-color: white !important;
+}
+
+.MuiTypography-colorTextSecondary {
+  color: white !important;
+}
+
+.MuiTableCell-head {
+  color: white !important;;
+}
+
+.MuiTableCell-body {
+  color: #9DA5B1 !important;
+}
+
+span {
+  color: white;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+}
+
+.flex-row.align-start {
+  align-items: start;
+}
+
+.flex-row.justify-start {
+  justify-content: flex-start;
+}
+
+.flex-row.justify-end {
+  justify-content: flex-end;
+}
+
+.flex-row.justify-center {
+  justify-content: center;
+}
+
+.padding-md {
+  padding: 15px;
+}
+
+.margin-md > * {
+  margin: 15px;
+}
+
+.margin-h-md > * {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.margin-h-md > *:first-child {
+  margin-left: 0;
+}
+
+.margin-h-sm > * {
+  margin-left: 7.5px;
+  margin-right: 7.5px;
+}
+
+.margin-h-sm > *:first-child {
+  margin-left: 0;
+}
+
+.margin-v-md > * {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.discovery-right-panel {
+  background-color: $lightGrey;
+  height: 100%;
+}
+
+.negate-padding-md {
+  margin: -15px;
+}
+
+.channel-login-left-panel {
+  background-color: $secondary;
+
+  height: 100vh;
+}
+
+.channel-login-left-panel img {
+  width: 100%;
+  height: 100%;
+}
+
+.primary-gradient-bg {
+  background: #7733DD;
+  background: -webkit-linear-gradient(top left, #7733DD, #A959CE);
+  background: -moz-linear-gradient(top left, #7733DD, #A959CE);
+  background: linear-gradient(to bottom right, #7733DD, #A959CE);
+}
+
+a {
+  color: $secondary;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.channel-cover img {
+  max-width: 100%;
+  //max-height: 100%;
+
+  height: 100%;
+
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.video-preview-search-result {
+  height: 200px;
+  width: 100%;
+
+  cursor: pointer;
+}
+
+.video-preview-search-result .video-thumbnail {
+  height: 100%;
+  width: 300px;
+}
+
+.video-preview-search-result .video-thumbnail img {
+  max-height: 100%;
+  max-width: 100%;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.slick-container {
+  padding: 50px;
+  width: 95%;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Fix for Slick issue */
+* {
+  min-height: 0;
+  min-width: 0;
+}
+
+.featured-banner {
+  position: relative;
+}
+
+.featured-banner video {
+  width: 100%;
+}
+
+.featured-banner-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  padding: 25px;
+}
+
+.footer {
+  background: black;
+  z-index: 2;
+  position: relative;
+}
+
+.MuiListItem-root {
+  color: white;
+}
+
+.video-carousel-preview {
+  width: 325px;
+  height: 180px;
+
+  position: relative;
+}
+
+.video-carousel-preview-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+
+
+  width: calc(100% - 20px);
+
+  padding: 10px;
+
+  background-color: rgba(1, 1, 1, 0.5);
+}
+
+.video-carousel-preview img {
+  width: 100%;
+  height: 100%;
+}
+
+.channel-preview-search-result {
+  height: 200px;
+  width: 100%;
+}
+
+.channel-preview-search-result img {
+  height: 100%;
+
+  border-radius: 50%;
+
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.h-center {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+
+  width: fit-content;
+}
+
+.channel-carousel-preview {
+  width: 200px;
+}
+
+.channel-carousel-preview-avatar {
+  background: grey;
+  width: 100%;
+  height: 200px;
+  border-radius: 50%;
+}
+
+.channel-carousel-preview img {
+  width: 100%;
+
+  border-radius: 50%;
+}
+
+.blur {
+  filter: blur(10px);
+}
+
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+
+  z-index: 9999;
+
+  background-color: $darkGrey;
+}
